@@ -1,6 +1,6 @@
 import numpy as np
 
-def montecarlo_simulation(iterations=10000):
+def montecarlo_simulation(iterations=1000000):
     inside_circle = 0
     points = []
 
