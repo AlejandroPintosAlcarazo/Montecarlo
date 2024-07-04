@@ -1,2 +1,21 @@
-venv/
-__pycache__/
+# Ignorar la carpeta venv en cualquier subdirectorio
+*/venv/
+*/venv/*
+
+# Ignorar archivos de bytecode de Python en cualquier subdirectorio
+**/*.pyc
+**/__pycache__/
+
+# Ignorar logs, bases de datos o resultados de pruebas
+*.log
+*.sqlite3
+
+# Ignorar configuraciones de IDEs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Otros archivos temporales
+.DS_Store
+Thumbs.db
