@@ -3,25 +3,20 @@ import sympy as sp
 from scipy.optimize import fsolve
 
 def montecarlo_integration(f, a, b, iterations=10000):
-    """
-    Calcula la integral de una función f en el intervalo [a, b] utilizando el método de Monte Carlo,
-    teniendo en cuenta las raíces de f en el intervalo.
-
-    f: Función a integrar
-    a: Límite inferior del intervalo
-    b: Límite superior del intervalo
-    iterations: Número de puntos aleatorios a generar
-    """
-    # Encontrar las raíces de f en el intervalo [a, b]
+    # Definir la variable simbólica
     x = sp.symbols('x')
-    func_expr = eval(f)
+    
+    # Convertir la cadena de texto a una expresión de SymPy
+    func_expr = sp.sympify(f)
+    
+    # Convertir la expresión de SymPy a una función numérica
     func = sp.lambdify(x, func_expr, modules=['numpy'])
 
     def f_numeric(x):
         return func(x)
 
     # Encontrar raíces en el intervalo [a, b] usando scipy.optimize.fsolve
-    initial_guesses = np.linspace(a, b, 10)  # Puntos iniciales para buscar raíces
+    initial_guesses = np.linspace(a, b, 10)
     roots = []
     for guess in initial_guesses:
         root = fsolve(f_numeric, guess)
@@ -45,7 +40,7 @@ def montecarlo_integration(f, a, b, iterations=10000):
 
 def find_roots_scipy(func_str, a, b):
     x = sp.symbols('x')
-    func_expr = eval(func_str)
+    func_expr = sp.sympify(func_str)
     func = sp.lambdify(x, func_expr, modules=['numpy'])
 
     def f_numeric(x):
@@ -61,7 +56,7 @@ def find_roots_scipy(func_str, a, b):
 
 def find_domain(func_str):
     x = sp.symbols('x')
-    func_expr = eval(func_str)
+    func_expr = sp.sympify(func_str)
     domain = sp.calculus.util.continuous_domain(func_expr, x, sp.S.Reals)
     return domain
 

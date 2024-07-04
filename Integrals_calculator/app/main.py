@@ -1,6 +1,6 @@
 from app.validate import validate_input
-from app.plot import plot_function
-from app.calculations import montecarlo_integration, find_roots_scipy, find_domain
+from app.plot import main_plot_function
+from app.calculations import find_roots_scipy, find_domain
 
 def get_args():
     print("Calculadora de Integrales usando Monte Carlo")
@@ -18,7 +18,7 @@ def main():
 
     if is_valid:
         print("La función es válida.")
-        plot_function(function_str, (a, b), 'function_plot.png')
+        main_plot_function(function_str, a, b, 'function_plot.png')
         print("El gráfico se ha guardado como 'function_plot.png'.")
 
         # Encontrar el dominio
@@ -29,9 +29,6 @@ def main():
         roots = find_roots_scipy(function_str, a, b)
         print(f"Raíces numéricas: {roots}")
 
-        # Calcular la integral usando Monte Carlo considerando las raíces
-        integral_value = montecarlo_integration(function_str, a, b, iterations)
-        print(f"Valor aproximado de la integral: {integral_value}")
     else:
         print("La función no es válida.")
 
