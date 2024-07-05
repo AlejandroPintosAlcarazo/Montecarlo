@@ -1,7 +1,8 @@
 import numpy as np
+import os
 import matplotlib.pyplot as plt
 import sympy as sp
-from app.calculations import find_roots_scipy, montecarlo_integration
+from app.calculations import find_roots, montecarlo_integration
 
 def plot_function(func_str, x_range, filename, integral_value, subintervals):
     # Definir la variable
@@ -44,12 +45,13 @@ def plot_function(func_str, x_range, filename, integral_value, subintervals):
         plt.text(mid, func(mid) / 2, f'{sub_integral:.4f}', horizontalalignment='center', color='black')
 
     # Guardar el gráfico en un archivo
+    os.makedirs(os.path.dirname(filename), exist_ok=True)
     plt.savefig(filename)
     plt.close()
 
-def main_plot_function(func_str, a, b, filename):
+def main_plot_function(func_str, a, b, iterations, filename):
     # Encontrar raíces numéricas
-    roots = find_roots_scipy(func_str, a, b)
+    roots = find_roots(func_str, a, b)
     roots = sorted([a] + roots + [b])
 
     integral_value = 0
@@ -59,17 +61,9 @@ def main_plot_function(func_str, a, b, filename):
     for i in range(len(roots) - 1):
         start = roots[i]
         end = roots[i + 1]
-        sub_integral = montecarlo_integration(func_str, start, end, iterations=1000)
+        sub_integral = montecarlo_integration(func_str, start, end, iterations)
         subintervals.append((start, end, sub_integral))
         integral_value += sub_integral
 
     # Graficar la función con los intervalos y la integral total
     plot_function(func_str, (a, b), filename, integral_value, subintervals)
-
-if __name__ == "__main__":
-    func_str = 'log(x - 2) * sin(x / 2)'
-    a = 0
-    b = 1000
-    filename = 'function_plot.png'
-    main_plot_function(func_str, a, b, filename)
-
