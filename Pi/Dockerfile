@@ -13,6 +13,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copia el resto de la aplicación al directorio de trabajo
 COPY . .
 
+# Asegúrate de que el directorio output exista
+RUN mkdir -p /app/output
+
 # Especifica el comando por defecto para ejecutar cuando se inicia el contenedor
 CMD ["python", "run.py"]
-

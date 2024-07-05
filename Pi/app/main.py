@@ -1,9 +1,10 @@
 import matplotlib.pyplot as plt
+import os
 from app.calculations import montecarlo_simulation
 
-def main():
+def main(iterations):
     # Realiza la simulación
-    pi_estimate, points = montecarlo_simulation()
+    pi_estimate, points = montecarlo_simulation(iterations)
 
     # Separa los puntos dentro y fuera del círculo
     inside_x = [x for x, y, inside in points if inside]
@@ -23,9 +24,12 @@ def main():
     plt.legend()
     plt.gca().set_aspect('equal', adjustable='box')
 
+    # Asegúrate de que el directorio output exista
+    os.makedirs('output', exist_ok=True)
+
     # Guarda el gráfico en un archivo
-    plt.savefig('montecarlo_simulation.png')
-    print(f"Gráfico guardado como 'montecarlo_simulation.png' con una estimación de Pi: {pi_estimate:.4f}")
+    plt.savefig('output/function_plot.png')
+    print(f"Gráfico guardado como 'output/function_plot.png' con una estimación de Pi: {pi_estimate:.4f}")
 
 if __name__ == "__main__":
     main()
