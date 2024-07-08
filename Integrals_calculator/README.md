@@ -12,6 +12,9 @@ Esta aplicación permite calcular integrales definidas e indefinidas de funcione
 
 ## Resultados
 
+Para comprobar:
+https://es.wolframalpha.com/calculators/integral-calculator
+
 A continuación, se muestra una representación visual de la interfaz de la calculadora de integrales:
 
 ![Calculadora de Integrales](../Assets/Calculator_plot.png)
