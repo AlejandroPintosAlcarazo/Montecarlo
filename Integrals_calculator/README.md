@@ -1,65 +1,33 @@
+# Calculadora de Integrales
 
+## Descripción General
 
-General README: Monte Carlo Method
-Monte Carlo Method: A Simple Solution for Complex Problems
-Overview
-The Monte Carlo Method is a powerful computational algorithm that leverages repeated random sampling to obtain numerical results. It's particularly useful for solving deterministic problems that are too complex to tackle analytically. This repository demonstrates how the Monte Carlo Method can be used to estimate values such as π and compute integrals.
+Esta aplicación permite calcular integrales definidas e indefinidas de funciones matemáticas utilizando la biblioteca SymPy en Python. La calculadora acepta una función matemática como entrada y proporciona el resultado de la integral.
 
-Why Monte Carlo?
-Versatility: Applicable in fields ranging from physics to finance.
-Simplicity: Easy to understand and implement.
-Robustness: Effective for complex problems where traditional methods fail.
-Applications
-Estimating π: A classic "Hello World" example.
-Calculating Integrals: Approximating complex integrals.
-Crypto Portfolio Optimization: Simulating asset allocations to optimize a portfolio.
-Getting Started
-Explore the examples provided in this repository to see the Monte Carlo Method in action.
+## Método
 
-README for Estimating π
-Estimating π Using Monte Carlo Method
-Overview
-This example demonstrates how to estimate the value of π using the Monte Carlo Method. By randomly sampling points within a square and counting how many fall inside a quarter circle, we can approximate π.
+1. **Entrada de la Función**: Se ingresa la función matemática a integrar.
+2. **Cálculo de la Integral**: Se determina la integral de la función utilizando técnicas simbólicas.
+3. **Resultado**: Se muestra el resultado de la integral, ya sea definida o indefinida, según la entrada proporcionada.
 
-Method
-Generate Random Points: Randomly distribute points within a unit square.
-Count Points Inside the Circle: Determine how many points fall inside the quarter circle.
-Estimate π: Use the ratio of points inside the circle to the total number of points to estimate π.
-Results
-Below is a visual representation of the Monte Carlo simulation for estimating π:
+## Resultados
 
+A continuación, se muestra una representación visual de la interfaz de la calculadora de integrales:
 
-README for Calculating Integrals
-Calculating Integrals Using Monte Carlo Method
-Overview
-This example shows how to use the Monte Carlo Method to approximate the value of definite integrals. The method involves randomly sampling points within the integration bounds and using the average value to estimate the integral.
+![Calculadora de Integrales](../assets/integrals_calculator.png)
 
-Method
-Define the Function: Specify the function to be integrated.
-Generate Random Points: Randomly sample points within the integration bounds.
-Compute the Integral: Use the average value of the function at the sampled points to approximate the integral.
-Results
-Below is a visual representation of the Monte Carlo integration for the function 
-log
-⁡
-(
-−
-2
-𝑥
-+
-5
-)
-∗
-sin
-⁡
-(
-𝑥
-−
-2
-)
-log(−2x+5)∗sin(x−2):
+## Uso
 
+Para utilizar la calculadora de integrales, siga estos pasos:
 
-Feel free to clone the repository, try out the examples, and see how the Monte Carlo Method can be applied to solve complex problems. If you have any questions or suggestions, don't hesitate to reach out.
+### Usando Python
 
-https://es.wolframalpha.com/calculators/integral-calculator
+Asegúrese de tener Python y las bibliotecas requeridas instaladas. Luego, ejecute la calculadora con la función deseada:
+
+python run.py "función" "límite_inferior" "límite_superior" "iteraciones"
+
+### Usando Docker
+
+Asegúrese de tener Docker instalado en su sistema. Navegue al directorio de la calculadora de integrales en su terminal y ejecute la calculadora utilizando el script proporcionado:
+
+./run.sh "función" "límite_inferior" "límite_superior" "iteraciones"
