@@ -25,7 +25,7 @@ def check_scalar(token):
     return is_valid
 
 def check_incognita(token):
-    is_valid = bool(re.fullmatch(r'[+-]?(\d+(\.\d*)?|\.\d+)?x', token))
+    is_valid = bool(re.fullmatch(r'[+-]?\d*\*?x', token))
     print(f"Check incognita '{token}': {is_valid}")
     return is_valid
 
