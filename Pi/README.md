@@ -22,7 +22,7 @@ This formula works because the unit circle has a radius of 1, and the area of a 
 
 Below is a visual representation of the Monte Carlo simulation for estimating π:
 
-![Monte Carlo Simulation Demo](../assets/Pi_plot.png)
+![Monte Carlo Simulation Demo](../Assets/Pi_plot.png)
 
 ## Usage
 
@@ -32,8 +32,8 @@ To run the Monte Carlo simulation for estimating π, follow these steps:
 
 Ensure you have Python and the required libraries installed. Then, run the simulation with the desired number of iterations:
 
-python run.py <iterations>
+python run.py "iterations"
 
 ### Using Docker
 Ensure Docker is installed on your system. Navigate to the Pi directory in your terminal and run the simulation using the provided shell script:
-./run.sh <iterations>
+./run.sh "iterations"
