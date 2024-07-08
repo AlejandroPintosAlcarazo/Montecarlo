@@ -14,7 +14,7 @@ Esta aplicación permite calcular integrales definidas e indefinidas de funcione
 
 A continuación, se muestra una representación visual de la interfaz de la calculadora de integrales:
 
-![Calculadora de Integrales](../assets/integrals_calculator.png)
+![Calculadora de Integrales](../Assets/calculator_plot.png)
 
 ## Uso
 
@@ -31,3 +31,16 @@ python run.py "función" "límite_inferior" "límite_superior" "iteraciones"
 Asegúrese de tener Docker instalado en su sistema. Navegue al directorio de la calculadora de integrales en su terminal y ejecute la calculadora utilizando el script proporcionado:
 
 ./run.sh "función" "límite_inferior" "límite_superior" "iteraciones"
+
+ALLOWED_FUNCTIONS = {
+    'sin': sp.sin,
+    'cos': sp.cos,
+    'tan': sp.tan,
+    'exp': sp.exp,
+    'sqrt': sp.sqrt,
+    'log': sp.log,
+    'log10': sp.log,
+    'pi': sp.pi,
+    'e': sp.E
+}
+
