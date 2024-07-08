@@ -14,7 +14,7 @@ Esta aplicación permite calcular integrales definidas e indefinidas de funcione
 
 A continuación, se muestra una representación visual de la interfaz de la calculadora de integrales:
 
-![Calculadora de Integrales](../Assets/calculator_plot.png)
+![Calculadora de Integrales](../Assets/Calculator_plot.png)
 
 ## Uso
 

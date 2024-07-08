@@ -19,3 +19,7 @@
 # Otros archivos temporales
 .DS_Store
 Thumbs.db
+
+# Ignorar carpetas de output y sus archivos
+**/output/
+**/output/*
